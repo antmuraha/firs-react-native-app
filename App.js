@@ -24,5 +24,5 @@ class MainApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('myApp', () => MainApp);
+//AppRegistry.registerComponent('myApp', () => MainApp);
 export default MainApp;

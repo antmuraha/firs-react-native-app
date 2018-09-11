@@ -9,9 +9,10 @@ class MyImage extends Component {
     this.state = {src: ''};
   }
 
-  _tapImage=({event, index})=>{
+  _tapImage=({})=>{
     //console.log('MyImage:_tapImage',event, index,this.props);
-    this.props.dispatch({type:SELECT_FULL, fullsrc:this.props.fullsrc});
+    //this.props.dispatch({type:SELECT_FULL, fullsrc:this.props.fullsrc});
+    this.props._navigation.navigate('FullImage',{fullsrc:this.props.fullsrc});
     //Alert.alert('You tapped the image!');
   }
 

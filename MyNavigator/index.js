@@ -7,6 +7,7 @@ import { reduxifyNavigator, createReactNavigationReduxMiddleware,} from 'react-n
 import HomeScreen from '../screens/home';
 import GalleryScreen from '../screens/gallery';
 import PreviewScreen from '../screens/preview';
+import FullImageScreen from '../screens/fullimage';
 
 const middleware = createReactNavigationReduxMiddleware(
   'root',
@@ -17,7 +18,8 @@ const RootNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     Gallery:GalleryScreen,
-    Preview:PreviewScreen
+    Preview:PreviewScreen,
+    FullImage:FullImageScreen
   },
   {
     initialRouteName: 'Home',

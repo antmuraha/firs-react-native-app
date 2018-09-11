@@ -3,7 +3,7 @@ import {For, View, Button, Text, StyleSheet, FlatList, TouchableOpacity , Alert}
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MyImage from '../components/MyImage';
-import FullImage from '../components/FullImage';
+//import FullImage from '../components/FullImage';
 import Dimensions from 'Dimensions';
 import {SELECT_FULL, DESELECT_FULL} from '../MyReducer/constants';
 //import {} from '../MyReducer/constants';
@@ -61,19 +61,10 @@ class GalleryScreen extends React.Component {
       username:item.cover_photo.user.username
     };
     //console.log('GalleryScreen:_imgRender',{...data});
-    return <MyImage {...data}/>;
+    return <MyImage _navigation={this.props.navigation} {...data}/>;
   };
 
   _keyExtractor = (item, index) => item.id.toString();
-
-  _onHideFullImg=({})=>{
-    //this.setState({fullsrc:''})
-    //console.log('FullImage:_onHideFullImg');
-    this.props.navigation.dispatch({type:DESELECT_FULL});
-    //actionDeselectFull();
-    //this.props.navigation.dispatch({type:DESELECT_FULL});
-    //Alert.alert('You tapped the full image!');
-  }
 
   render() {
     //console.log('GalleryScreen:render');
@@ -90,7 +81,7 @@ class GalleryScreen extends React.Component {
     return (
       <View style={styles.gallery}>
       <FlatList horizontal={false}
-      style={[styles.flatlist,data?'':styles.hidden,fullsrc?styles.hidden:'']}
+      style={[styles.flatlist]}
       data={data}
       //extraData={data}
       numColumns={numw}
@@ -100,9 +91,6 @@ class GalleryScreen extends React.Component {
       initialNumToRender={20}
       onEndReached={this.onScrollHandler}
       onEndThreshold={100}
-      />
-      <FullImage fullsrc={fullsrc} _onHideFullImg={this._onHideFullImg}
-      style={[styles.imgfull,fullsrc?'':styles.hidden]}
       />
       <View style={[styles.ooops,data?styles.hidden:'']}>
       <Text>

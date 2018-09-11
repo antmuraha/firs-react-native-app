@@ -30,12 +30,12 @@ function nav(state, action) {
     case RETRIEVE_DATA:{
       return {...state, data:action.data,cache:true};
     }
-    case SELECT_FULL:{
+/*    case SELECT_FULL:{
       return {...state, fullsrc:action.fullsrc};
-    }
-    case DESELECT_FULL:{
+    }*/
+/*    case DESELECT_FULL:{
       return {...state, fullsrc:''};
-    }
+    }*/
     default:{
       nextState = RootNavigator.router.getStateForAction(action, state);
       break;}

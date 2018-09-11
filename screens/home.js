@@ -42,8 +42,7 @@ class HomeScreen extends React.Component {
       <View style={styles.home}>
       <Button
       title="Show images"
-      onPress={() => {
-        this.props.navigation.navigate('Gallery',{test:123})}}
+      onPress={() => {this.props.navigation.navigate('Gallery')}}
         />
 
         <Button
