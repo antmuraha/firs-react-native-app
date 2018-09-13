@@ -1,16 +1,16 @@
-
-import {StyleSheet} from 'react-native';
+/* @flow */
+import { StyleSheet } from "react-native";
 
 module.exports = StyleSheet.create({
   home: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center"
   },
   gallery: {
-    color: 'green',
+    color: "green"
   },
   preview: {
-    color: 'green',
-  },
+    color: "green"
+  }
 });

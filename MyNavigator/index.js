@@ -1,39 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createStackNavigator } from 'react-navigation';
-import { reduxifyNavigator, createReactNavigationReduxMiddleware,} from 'react-navigation-redux-helpers';
+/* @flow */
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createStackNavigator } from "react-navigation";
+import {
+  reduxifyNavigator,
+  createReactNavigationReduxMiddleware
+} from "react-navigation-redux-helpers";
 
-import HomeScreen from '../screens/home';
-import GalleryScreen from '../screens/gallery';
-import PreviewScreen from '../screens/preview';
-import FullImageScreen from '../screens/fullimage';
+import HomeScreen from "../screens/home";
+import GalleryScreen from "../screens/gallery";
+import PreviewScreen from "../screens/preview";
+import FullImageScreen from "../screens/fullimage";
 
 const middleware = createReactNavigationReduxMiddleware(
-  'root',
+  "root",
   state => state.nav
 );
 
 const RootNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Gallery:GalleryScreen,
-    Preview:PreviewScreen,
-    FullImage:FullImageScreen
+    Gallery: GalleryScreen,
+    Preview: PreviewScreen,
+    FullImage: FullImageScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: "Home"
     //mode: 'modal',
     //headerMode: 'none',
   }
 );
 
-const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
+const AppWithNavigationState = reduxifyNavigator(RootNavigator, "root");
 
 const mapStateToProps = state => ({
-  state: state.nav,
+  state: state.nav
 });
 
 const MyNavigator = connect(mapStateToProps)(AppWithNavigationState);
 
-export { RootNavigator, MyNavigator, middleware};
+export { RootNavigator, MyNavigator, middleware };
