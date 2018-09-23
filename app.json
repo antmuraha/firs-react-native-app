@@ -1,5 +1,28 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "name": "GalleryRN",
+    "icon": "./assets/icon.png",
+    "version": "1.0.0",
+    "slug": "galleryrn",
+    "sdkVersion": "27.0.0",
+    "version": "1.0.0",
+    "platforms":["android"],
+    "githubUrl":"https://github.com/antmuraha/firs-react-native-app",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "bundleIdentifier": "com.muraha.galleryrn"
+    },
+    "android": {
+      "package": "com.muraha.galleryrn",
+      "versionCode":1,
+      "permissions":[]
+    }
   }
 }

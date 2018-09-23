@@ -11,7 +11,7 @@ const store = createStore(MyReducer, applyMiddleware(middleware));
 
 //console.log('APP.JS');
 
-class MainApp extends React.Component<Props, State = void>  {
+export default class App extends React.Component {
   componentDidMount() {
     //console.log('MainApp:componentDidMount');
   }
@@ -26,4 +26,4 @@ class MainApp extends React.Component<Props, State = void>  {
 }
 
 //AppRegistry.registerComponent('myApp', () => MainApp);
-export default MainApp;
+//export default MainApp;

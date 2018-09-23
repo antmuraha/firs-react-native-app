@@ -8,13 +8,15 @@
 Для очистки кеша предусмотрена соответсвующая кнопка на главном экране.
 
 ## Что не реализовано:
-* FlatList - загрузка изображений для заполнения экрана и его прокручивание
+
+- FlatList - загрузка изображений для заполнения экрана и его прокручивание
 
 ## Что применялось:
-* react-native
-* redux
-* es6
-* flexbox
-* react-navigation
-* fetch
-* AsyncStorage
+
+- react-native
+- redux
+- es6
+- flexbox
+- react-navigation
+- fetch
+- AsyncStorage

@@ -11,7 +11,7 @@ import {
 import PropTypes from "prop-types";
 import { SELECT_FULL } from "../MyReducer/constants";
 
-class MyImage extends Component<Props, State=void> {
+class MyImage extends Component {
   constructor(props) {
     super(props);
     this.state = { src: "" };
@@ -33,7 +33,7 @@ class MyImage extends Component<Props, State=void> {
 
     return (
       <TouchableOpacity activeOpacity={0.5} onPress={this._tapImage}>
-        <View style={`width:${width}`}>
+        <View style={"width:"+{width}}>
           <Image
             source={{ uri: src }}
             style={styles.img}
@@ -51,12 +51,14 @@ class MyImage extends Component<Props, State=void> {
 }
 
 MyImage.propTypes = {
-  size: PropTypes.number
+  src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
 };
 
-MyImage.defaultProps = {
-  size: 100
-};
+MyImage.defaultProps = {};
 
 const styles = StyleSheet.create({
   img: {
